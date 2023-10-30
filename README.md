@@ -29,7 +29,6 @@ To run the project locally, follow these simple steps:
 1. Clone this repository:
     
     ```bash
-    bashCopy code
     git clone https://github.com/yourusername/frontend-store-app.git
     
     ```
@@ -37,7 +36,6 @@ To run the project locally, follow these simple steps:
 2. Navigate to the project directory:
     
     ```bash
-    bashCopy code
     cd frontend-store-app
     
     ```
@@ -45,7 +43,6 @@ To run the project locally, follow these simple steps:
 3. Install the necessary dependencies with [Yarn](https://yarnpkg.com/):
     
     ```bash
-    bashCopy code
     yarn install
     
     ```
