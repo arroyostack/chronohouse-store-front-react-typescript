@@ -29,11 +29,11 @@ export const ShopView = () => {
   }, [] );
   return (
     <>
-      {
-        products.length > 0 &&
+      <div className="project-container bg-amber-50 dark:bg-slate-700 min-h-screen py-6 px-3 md:px-10">
+        {
+          products.length > 0 &&
 
 
-        <div className="project-container bg-amber-50 dark:bg-slate-700 min-h-screen py-6 px-3 md:px-10">
           <ul className="flex flex-wrap justify-around gap-4">
             {
               products.map( product => (
@@ -52,8 +52,8 @@ export const ShopView = () => {
             }
           </ul>
 
-        </div>
-      }
+        }
+      </div>
 
     </>
   );

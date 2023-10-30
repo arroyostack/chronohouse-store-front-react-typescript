@@ -3,11 +3,10 @@ import { ProductContext } from "./ProductCard";
 
 interface Props {
     className?: string;
-
-
+    textSize?: string;
 }
 
-export const ProductTitle = ( { className }: Props ) => {
+export const ProductTitle = ( { className, textSize }: Props ) => {
     const { product } = useContext( ProductContext );
 
     const titleMaxLength: number = 40;
@@ -18,7 +17,8 @@ export const ProductTitle = ( { className }: Props ) => {
 
     return (
         <a href="#" className={ `${className}` } >
-            <h5 className={ `text-xl font-semibold tracking-tight text-gray-900 dark:text-white ${className}` }>{ product?.title ? shortenedTitle : 'No title found' }</h5>
+            <p className={ `${textSize ? textSize : 'text-xl'} font-semibold tracking-tight text-gray-900 dark:text-white ${className}` }>{ product?.title ? shortenedTitle : 'No title found' }</p>
         </a>
     );
 };
+

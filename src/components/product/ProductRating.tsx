@@ -4,7 +4,7 @@ import { ProductContext } from "./ProductCard";
 export const ProductRating = () => {
     const { product } = useContext( ProductContext );
     // Workout system to generate yellow and gray start upon rating number;
-    const productRate: { rate: number, count: number; } = product?.rating.rate.toFixed();
+    const productRate = product?.rating.rate.toFixed();
 
     return (
 
