@@ -1,7 +1,6 @@
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../hooks/storeVariables";
 
 import { addToBasket } from "../../redux/features/basket";
-
 
 import { useContext } from "react";
 import { ProductContext } from "./ProductCard";
@@ -10,8 +9,7 @@ import { ProductContext } from "./ProductCard";
 export const ProductActionButton = ( { text }: { text?: string; } ) => {
     const { product } = useContext( ProductContext );
 
-    const dispatch = useDispatch();
-
+    const dispatch = useAppDispatch();
 
     return (
         <div className="flex items-center justify-between">

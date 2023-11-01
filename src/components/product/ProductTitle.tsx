@@ -16,8 +16,8 @@ export const ProductTitle = ( { className, textSize }: Props ) => {
     const shortenedTitle = productTitle?.slice( 0, titleMaxLength ) + ( productTitle.length > titleMaxLength ? "..." : "" );
 
     return (
-        <a href="#" className={ `${className}` } >
-            <p className={ `${textSize ? textSize : 'text-xl'} font-semibold tracking-tight text-gray-900 dark:text-white ${className}` }>{ product?.title ? shortenedTitle : 'No title found' }</p>
+        <a href="" className={ `${className}` } >
+            <p className={ `${textSize ? textSize : 'text-xl'} font-semibold tracking-tight text-gray-900  ${className}` }>{ product?.title ? shortenedTitle : 'No title found' }</p>
         </a>
     );
 };

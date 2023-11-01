@@ -1,59 +1,77 @@
 import { useEffect, useState } from "react";
-import { ProductActionButton } from "../components/product/ProductActionButton";
-import { ProductCard } from "../components/product/ProductCard";
-import { ProductFooter } from "../components/product/ProductFooter";
-import { ProductImage } from "../components/product/ProductImage";
-import { ProductPrice } from "../components/product/ProductPrice";
-import { ProductRating } from "../components/product/ProductRating";
-import { ProductTitle } from "../components/product/ProductTitle";
 
+import { ProductActionButton, ProductImage, ProductCard, ProductFooter, ProductPrice, ProductRating, ProductTitle } from '../components/product';
 
-const getProducts = async () => {
-  const requestOptions = {
-    method: 'GET'
-  };
-
-  const response = await fetch( "https://fakestoreapi.com/products/category/electronics", requestOptions );
-  const data = await response.json();
-
-  return data;
-};
+import { getProducts } from "../components/helpers/getProducts";
+import { ViewContainer } from "../components/ViewContainer";
+import { PageHeading } from "../components/pageHeading";
 
 
 export const ShopView = () => {
   const [ products, setProducts ] = useState( [] );
+  const [ isLoading, setIsLoading ] = useState<boolean>( false );
+  const [ hasError, setHasError ] = useState<boolean>( false );
+
+  const getProductData: () => Promise<void> = async () => {
+    const dataFromLocalStorage = localStorage.getItem( "data" );
+
+    if ( dataFromLocalStorage ) {
+      const data = JSON.parse( dataFromLocalStorage );
+      setProducts( data );
+      return;
+    }
+    try {
+      setIsLoading( true );
+      const data = await getProducts();
+      setProducts( data );
+    } catch ( error ) {
+      setHasError( true );
+      setProducts( [] );
+    } finally {
+      setIsLoading( false );
+    }
+  };
 
   useEffect( () => {
-    getProducts()
-      .then( data => setProducts( data ) );
+    getProductData();
   }, [] );
+
   return (
     <>
-      <div className="project-container bg-amber-50 dark:bg-slate-700 min-h-screen py-6 px-3 md:px-10">
-        {
-          products.length > 0 &&
+
+      { isLoading && <h1>Loading...</h1> }
+      { hasError && <h1>There was an error while trying to fetch products.</h1> }
+
+      <ViewContainer>
+        <>
+          <PageHeading text="ChronoHouse Shop" />
+          {
+            products.length > 0 &&
+
+            <ul className="flex flex-wrap justify-between gap-4">
+              {
+                products.map( product => (
+                  <li key={ Math.random() * 100000000 }>
+                    <ProductCard product={ product }>
+                      <ProductImage />
+                      <ProductTitle />
+                      <ProductRating />
+                      <ProductFooter>
+                        <ProductPrice />
+                        <ProductActionButton />
+                      </ProductFooter>
+                    </ProductCard>
+                  </li>
+                ) )
+              }
+            </ul>
+          }
+        </>
+
+      </ViewContainer>
 
 
-          <ul className="flex flex-wrap justify-around gap-4">
-            {
-              products.map( product => (
-                <li key={ Math.random() * 100000000 }>
-                  <ProductCard product={ product }>
-                    <ProductImage />
-                    <ProductTitle />
-                    <ProductRating />
-                    <ProductFooter>
-                      <ProductPrice />
-                      <ProductActionButton />
-                    </ProductFooter>
-                  </ProductCard>
-                </li>
-              ) )
-            }
-          </ul>
 
-        }
-      </div>
 
     </>
   );
