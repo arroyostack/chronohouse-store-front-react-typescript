@@ -1,6 +1,7 @@
 # In progress.
 
 # **Frontend Store App 🛍️**
+# Live demo <a href="https://chronouse-shop-front.netlify.app/" target="blank">here</a>
 
 Welcome to my Frontend Store App project! This simple solo project was an exciting endeavor where I put my recently acquired front-end skills into practice. The app is  online store, allowing users to add products to their basket and proceed with a seamless checkout process.
 
