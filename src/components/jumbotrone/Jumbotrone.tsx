@@ -21,8 +21,6 @@ export const Jumbotrone = ( { children, image }: JumbotroneContextProps ) => {
                     </div>
                 </div>
             </section>
-
-
         </main>
     );
 };
