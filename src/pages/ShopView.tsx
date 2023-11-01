@@ -4,7 +4,7 @@ import { ProductActionButton, ProductImage, ProductCard, ProductFooter, ProductP
 
 import { getProducts } from "../components/helpers/getProducts";
 import { ViewContainer } from "../components/ViewContainer";
-import { PageHeading } from "../components/pageHeading";
+import { PageHeading } from "../components/PageHeading";
 
 
 export const ShopView = () => {
