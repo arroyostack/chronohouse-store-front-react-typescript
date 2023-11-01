@@ -1,9 +1,7 @@
-import { useDispatch } from "react-redux";
-
-
-
 import { increaseAmount, removeItem, decreaseAmount } from "../../redux/features/basket";
+
 import { useAppDispatch } from "../../hooks/storeVariables";
+
 import { Product } from "../../intefaces/interfaces";
 
 export interface BasketProduct {

@@ -1,5 +1,4 @@
 import { ReactElement, createContext } from 'react';
-import { ProductRating } from '../../intefaces/interfaces';
 
 export interface Product {
     id: number;

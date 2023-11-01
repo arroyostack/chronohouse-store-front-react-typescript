@@ -1,11 +1,14 @@
-import { ProductButtons, ProductCard, ProductFooter, ProductPrice, ProductTitle, ProductImage } from '../components/product';
+import { useState } from 'react';
+
 import { useAppSelector } from "../hooks/storeVariables";
+
+import { ProductButtons, ProductCard, ProductFooter, ProductPrice, ProductTitle, ProductImage } from '../components/product';
+
 import { ViewContainer } from "../components/ViewContainer";
 import { CheckOutDashboard } from '../components/checkout/CheckOutDashboard';
 import { TotalAmount } from '../components/checkout/TotalAmount';
 import { ModalComponent } from '../components/ModalComponent';
-import { PageHeading } from '../components/pageHeading';
-import { useState } from 'react';
+import { PageHeading } from '../components/PageHeading';
 
 export interface ProductProps {
     id: number;

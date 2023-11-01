@@ -1,4 +1,3 @@
-import { defineConfig } from 'vite';
 import { WaitingSpinner } from './WaitingSpinner';
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '../hooks/storeVariables';
