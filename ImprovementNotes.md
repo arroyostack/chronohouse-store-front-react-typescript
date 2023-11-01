@@ -1,0 +1,4 @@
+- Improve modal component pattern. Make styles dynamic.
+- Improve basket view. Break into smaller modules. Clean cluttered code. Improve legibility and code reusability.
+- Improve Jumbotrone component pattern. Make styles dynamic.
+- Workout Rating system to generate starts upon Rating number.
