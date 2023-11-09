@@ -48,7 +48,7 @@ export const ShopView = () => {
           {
             products.length > 0 &&
 
-            <ul className="flex flex-wrap justify-between gap-4">
+            <ul className="flex flex-wrap justify-around gap-4">
               {
                 products.map( product => (
                   <li key={ Math.random() * 100000000 }>
