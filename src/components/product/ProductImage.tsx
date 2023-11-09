@@ -23,7 +23,7 @@ export const ProductImage = ( { image, className }: Props ): JSX.Element => {
 
     return (
         <div className={ `p-3 rounded ${className}` } >
-            <img className=" h-48 max-h-full min-h-full" src={ imageToShow } alt="product image" />
+            <img className="h-48 max-h-full min-h-full" src={ imageToShow } alt="product image" />
         </div>
     );
 };

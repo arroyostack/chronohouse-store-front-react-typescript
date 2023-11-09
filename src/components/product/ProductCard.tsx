@@ -1,4 +1,4 @@
-import { ReactElement, createContext } from 'react';
+import {  ReactElement, createContext } from 'react';
 
 export interface Product {
     id: number;
@@ -31,7 +31,9 @@ export const ProductCard = ( { product, children, className }: ProductCardProps 
             <Provider value={ {
                 product
             } }>
-                <div className={ `mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start dark:bg-white ${className}` } style={ { width: "rem" } }>
+                <div 
+                style={{maxWidth: "20rem"}}
+                className={ `mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start dark:bg-white ${className}` }>
                     <div className="px-5 pb-5">
                         { children }
                     </div>
